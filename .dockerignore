@@ -1,0 +1,78 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Test files
+tests/
+*.test.py
+
+# Examples (optional, uncomment if you don't want examples in container)
+# examples/
+
+# Distribution artifacts
+dist/
+build/
+*.tar.gz
+*.whl
+
+# Temporary files
+*.log
+*.tmp
+tmp/
+temp/
+
+# Geo-Distribution-Installer subdirectory (if not needed)
+Geo-Distribution-Installer/
+
+# Other
+.pytest_cache/
+.tox/
+.coverage
+coverage.xml
+*.cover

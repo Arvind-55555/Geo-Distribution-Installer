@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  geo-distro:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: geo-distro:local
+    container_name: geo-distro-cli
+
+    # Override entrypoint for interactive use
+    # entrypoint: ["/bin/bash"]
+
+    # Mount current directory for development
+    volumes:
+      - ./:/workspace
+
+    # Environment variables (if needed)
+    environment:
+      - PYTHONUNBUFFERED=1
+
+    # Keep container running for interactive use
+    stdin_open: true
+    tty: true
+    # Example: Run a specific command
+    # command: ["info"]
+
+    # Usage examples:
+    # Build: docker-compose build
+    # Run help: docker-compose run --rm geo-distro --help
+    # Run info: docker-compose run --rm geo-distro info
+    # Interactive shell: docker-compose run --rm --entrypoint /bin/bash geo-distro
