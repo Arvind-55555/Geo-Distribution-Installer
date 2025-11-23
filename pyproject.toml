@@ -1,0 +1,86 @@
+[build-system]
+requires = [
+    "setuptools>=45",
+    "setuptools-scm>=6.2",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-distro"
+dynamic = ["version"]
+description = "A comprehensive one-click installation package for geospatial libraries."
+readme = {file = "README.md", content-type = "text/markdown"}
+license = {text = "MIT"}
+authors = [
+    {name = "Arvind", email = "arvind.saane.111@gmail.com"}
+]
+maintainers = [
+    {name = "Arvind", email = "arvind.saane.111@gmail.com"}
+]
+keywords = [
+    "geospatial", "gis", "geopandas", "rasterio", 
+    "maps", "spatial-analysis", "data-science",
+    "anaconda", "distribution", "installer"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.0.0",
+    "requests>=2.25.0",
+    "tqdm>=4.60.0",
+    "pyyaml>=5.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "twine",
+    "build",
+]
+
+[project.urls]
+Homepage = "https://github.com/Arvind-55555/Geo-Distribution-Installer"
+Documentation = "https://github.com/Arvind-55555/Geo-Distribution-Installer#README.md"
+Repository = "https://github.com/Arvind-55555/Geo-Distribution-Installer"
+Issues = "https://github.com/Arvind-55555/Geo-Distribution-Installer/issues"
+"Source Code" = "https://github.com/Arvind-55555/Geo-Distribution-Installer"
+
+[project.scripts]
+geo-distro = "geodistro.cli:main"
+
+[tool.setuptools]
+packages = {find = {where = ["src"]}}
+
+[tool.setuptools.package-data]
+"*" = ["*.yml", "*.yaml", "*.txt"]
+
+[tool.setuptools.dynamic]
+version = {attr = "geodistro.__version__"}
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
