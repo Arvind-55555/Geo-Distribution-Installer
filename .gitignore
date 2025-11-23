@@ -22,4 +22,4 @@ Thumbs.db
 
 # Testing
 .coverage
-.pytest_cache/
+.pytest_cache/Miniconda3-latest-Linux-x86_64.sh
