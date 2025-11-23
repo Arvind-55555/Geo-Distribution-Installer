@@ -1,4 +1,4 @@
-# Geo Distribution 🌍
+# Geo Distribution Installer 🌍
 
 A comprehensive one-click installation package for geospatial libraries.
 
@@ -11,6 +11,9 @@ A comprehensive one-click installation package for geospatial libraries.
 - **Google Maps** integration
 - **Advanced analytics** (PySAL, scikit-learn)
 - **Jupyter Lab** with geo extensions
+
+## PyPI Package: 
+https://pypi.org/project/geo-distro/
 
 ## Quick Start
 
