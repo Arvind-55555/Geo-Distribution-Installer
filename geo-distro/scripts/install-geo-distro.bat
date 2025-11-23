@@ -1,0 +1,3 @@
+@echo off
+echo Installing Geo Distro...
+pip install .
