@@ -75,9 +75,17 @@ jobs:
     name: Publish Python distribution to PyPI
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/project/geo-distro/
+    # IMPORTANT: To enable PyPI publishing, you need to:
+    # 1. Create a PyPI account and register the 'geo-distro' project
+    # 2. Set up trusted publishing at https://pypi.org/manage/account/publishing/
+    #    - Owner: Arvind-55555
+    #    - Repository: Geo-Distribution-Installer
+    #    - Workflow: python-publish.yml
+    #    - Environment: pypi
+    # 3. Uncomment the environment section below
+    # environment:
+    #   name: pypi
+    #   url: https://pypi.org/project/geo-distro/
 
     permissions:
       id-token: write
@@ -89,7 +97,18 @@ jobs:
         name: python-package-distributions
         path: dist/
 
-    - name: Publish to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        packages-dir: dist/
+    # Uncomment this step once trusted publishing is configured on PyPI
+    # - name: Publish to PyPI
+    #   uses: pypa/gh-action-pypi-publish@release/v1
+    #   with:
+    #     packages-dir: dist/
+    
+    - name: Build artifacts ready
+      run: |
+        echo "✅ Package built successfully!"
+        echo "📦 Distribution files are available in the artifacts"
+        echo ""
+        echo "To publish to PyPI:"
+        echo "1. Download the artifacts from this workflow run"
+        echo "2. Set up trusted publishing (see comments above)"
+        echo "3. Or manually publish with: twine upload dist/*"
