@@ -1,0 +1,73 @@
+[build-system]
+requires = [
+    "setuptools>=45",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-distro"
+version = "0.1.0"
+description = "A comprehensive one-click installation package for geospatial libraries."
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Arvind", email = "arvind.saane.111@gmail.com"}
+]
+keywords = [
+    "geospatial", "gis", "geopandas", "rasterio", 
+    "maps", "spatial-analysis", "data-science"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+requires-python = ">=3.8"
+dependencies = [
+    # Lightweight dependencies for the installer
+    "click>=8.0.0",
+    "requests>=2.25.0",
+    "tqdm>=4.60.0",
+    "pyyaml>=5.4.0",
+]
+
+[project.optional-dependencies]
+full = [
+    # This will be handled by our installer, not pip
+]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "twine",
+    "build",
+]
+
+[project.urls]
+Homepage = "https://github.com/Arvind-55555/Geo-Distribution-Installer.git"
+Documentation = "https://github.com/Arvind-55555/Geo-Distribution-Installer.git#readme"
+Repository = "https://github.com/Arvind-55555/Geo-Distribution-Installer.git"
+Issues = "https://github.com/Arvind-55555/Geo-Distribution-Installer.git/issues"
+
+[project.scripts]
+geo-distro = "geodistro.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["geo-distro/src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.yml", "*.yaml", "*.txt"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']

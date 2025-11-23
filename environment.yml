@@ -1,0 +1,68 @@
+name: geo-distro
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  # Core geospatial
+  - gdal
+  - geos
+  - proj
+  - geotiff
+  - libspatialindex
+  - rasterio
+  - fiona
+  - shapely
+  - pyproj
+  - cartopy
+  # Python geo libraries
+  - geopandas
+  - contextily
+  - folium
+  - ipyleaflet
+  - mapclassify
+  - movingpandas
+  - osmnx
+  - pyogrio
+  - rasterstats
+  - rioxarray
+  - sentinelsat
+  - whitebox
+  - xyzservices
+  # Web mapping
+  - plotly
+  - keplergl
+  - dash
+  - dash-leaflet
+  - voila
+  # Advanced analytics
+  - scikit-learn
+  - scikit-image
+  - pysal
+  - esda
+  - splot
+  - libpysal
+  - mgwr
+  - spaghetti
+  - pointpats
+  # Google maps tools
+  - googlemaps
+  - gmaps
+  - geopy
+  # Development tools
+  - jupyter
+  - notebook<7
+  - jupyterlab
+  - jupyter-server-proxy
+  - jupyterlab-git
+  - jupyterlab-geojson
+  - jupyterlab-kernelspy
+  - black
+  - flake8
+  - pytest
+  - ipywidgets
+  - pip
+  - pip:
+    - mapboxgl
+    - geemap
+    - here-map-widget-for-jupyter
